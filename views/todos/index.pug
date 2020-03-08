@@ -1,0 +1,15 @@
+extends ../layouts/main
+
+block content
+  h1.title.is-1 Todo list
+  a(href="/todos/new")
+    button.button.is-link New todo
+  if todos.length
+    .content
+      ul
+        each todo in todos
+          li
+            a(href=`/todos/${todo.id}`)
+              p= todo.name
+  else
+    p There are no todos to show

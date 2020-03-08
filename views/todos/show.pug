@@ -1,0 +1,13 @@
+extends ../layouts/main
+
+block content
+  .card.ticket(id=`todo-${todo.id}`)
+    .card-content
+      .media
+        .media-content
+          p.title.is-4 #{todo.name}
+      .content
+        p Priority: #{todo.priority}
+        button.button.is-danger(type="button", onclick=`deleteTodo(${todo.id})`) Törlés
+block scripts
+  script(src="js/todo.js")

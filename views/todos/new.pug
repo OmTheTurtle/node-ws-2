@@ -1,0 +1,21 @@
+extends ../layouts/main
+
+block content
+  h2.title.is-2 Add todo
+  form(action="/todos", method="post")
+    .field
+      label.label Name
+      .control
+        input.input(type="text" placeholder="Name" name="name")
+    .field
+    .field
+      label.label Priority
+      .control
+        .select
+          select(name="priority")
+            option(value="low") low
+            option(value="medium") medium
+            option(value="high") high
+    .field.is-grouped
+      .control
+        button.button.is-link Submit
